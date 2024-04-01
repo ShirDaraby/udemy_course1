@@ -1,0 +1,235 @@
+/* challenge */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+.article {
+  width: 825px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+ul {
+  /* padding: 50px; */
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.product {
+  border: 5px solid black;
+  margin: 50px auto;
+  position: relative;
+}
+
+.product-title {
+  background-color: rgb(209, 209, 209);
+  text-align: center;
+  padding: 15px;
+}
+
+/* PRODUCT INFORMATION */
+.shipping {
+  color: gray;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  /* margin-bottom: 20px; */
+}
+
+.price {
+  font-size: 36px;
+}
+
+/* This is the second option instead of using psuedo class (h1::before as below). in this case we need to define parent element as relative (.product) and child element as absolute (sale)*/
+.sale {
+  background-color: red;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 7px 15px;
+  display: inline-block;
+  /* the inline-block will create the border of the block same as the text (only the space needed). another option instead of inline block is to define width and text align as below */
+  position: absolute;
+  top: -25;
+  left: -40;
+  /* width: 40px;
+  text-align: center; */
+}
+/* this is another way to create same tag, with psuedo class (first crete parent element-relative, then child element absolute)
+h1 {
+  position: relative;
+}
+
+h1::before {
+  content: "SALE";
+  letter-spacing: 2px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 14px;
+  position: absolute;
+  padding: 5px;
+  left: -25px;
+  top: -25px;
+  display: inline-block;
+} */
+
+.color {
+  height: 22px;
+  width: 22px;
+  background-color: #000;
+  display: inline-block;
+  /* height and width doesnot apply to "inline" elements so we must use the "inline-block. then it will only occupy the space that it needs */
+  margin-right: 10px;
+}
+
+.color-blue {
+  background-color: aqua;
+}
+
+.color-red {
+  background-color: red;
+}
+
+.color-yellow {
+  background-color: yellow;
+}
+
+.color-green {
+  background-color: green;
+}
+
+.color-orange {
+  background-color: orange;
+}
+
+.more-info:link,
+.more-info:visited {
+  color: #000;
+  display: inline-block;
+  margin-bottom: 30px;
+  /* in order to create margin-bottom to this element, we must display it as "inline-block". if not- it will remain "block" and blocks cant have space above them (as we want to create by margin-bottom) */
+}
+
+.more-info:hover,
+.more-info:active {
+  text-decoration: none;
+}
+
+.description {
+  margin-bottom: 10px;
+  clear: both;
+}
+
+/* PRODUCT DETAILS */
+.details-TITLE {
+  font-size: 20px;
+  line-height: 0.8;
+  /* margin-top: 30px; */
+}
+
+.details-list {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+.details-list li {
+  margin-bottom: 10px;
+}
+
+/* button */
+.add-cart {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 10px;
+}
+
+.add-cart:hover {
+  background-color: #ffffff;
+  color: #000;
+  border-top: #000 solid 5px;
+}
+
+/* li:last-child {
+} */
+
+
+/* floats
+.price {
+  float:left;
+}
+
+.shipping {
+  padding-top: 15px;
+  float: right;
+}
+
+.img-box {
+  float: left;
+  margin-right: 40px;
+}
+
+.price-box {
+  width: 243px;
+  float: left;
+  margin-right: 40px;
+  margin-top: 30px;
+}
+
+.product-details-box {
+  width: 243px;
+  float: left;
+  margin-top: 30px;
+} */
+
+/* .container {
+  background-color: red;
+}
+
+.Product-content::after {
+  content: '';
+  display:block;
+  clear: both;
+} */
+
+/* Flexbox */
+.all-product {
+  display: flex;
+}
+
+.Product-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.price-shipping {
+  display: flex;
+}
+
+.product-details-box {
+  margin-right: 30px;
+}
+
+.container-price-box {
+  flex-wrap: wrap;
+}
+
+.description {
+  /* flex-basis: auto; */
+  flex-shrink: 1;
+}
