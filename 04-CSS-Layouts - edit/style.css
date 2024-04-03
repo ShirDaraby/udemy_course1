@@ -39,7 +39,7 @@ body {
   padding-left: 40px;
   padding-right: 40px; */
   padding: 20px 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   height: 80px;
 }
 
@@ -317,9 +317,11 @@ display: block;
   color: black;
 }
 
+/* FLEXBOX LAYOUT */
 .row {
-  display: flex;
-  gap: 75px;
+  /* TEMPORARY DISABLE */
+  /* display: flex;
+  gap: 75px; */
 }
 
 aside {
@@ -330,9 +332,39 @@ aside {
   /* flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto; */
-  flex: 0 0 300px;
-  }
+  
+  /* TEMPORARY DISABLE */
+  /* flex: 0 0 300px; */
+}
 
 article {
-  flex: 0 0 825px;
+  /* TEMPORARY DISABLE */
+  /* flex: 0 0 825px; */
+}
+
+/* CSS GRIS LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header {
+grid-column: 1 / 3;
+/* NOTE TO SELF: its best to activate the grid view from the inspect so i will see clearly what are the cells i want to specify. at first i entered "1 / 2" and didnt realize it says only one cell. instead i could write "1/-1-" -beggining to end. or the third option: "1/span 2"- calculate 2 cells */
+}
+
+article {
+}
+
+aside {
+}
+
+footer {
+/* grid-column: 1 / 3; */
+/* grid-column: 1 / -1; */
+grid-column: -3 / -1;
+background-color: #444;
 }
