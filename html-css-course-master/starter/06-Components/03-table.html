@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <title>Component</title>
+
+  <style>
+    /*
+    SPACING SYSTEM (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+    FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+    */
+
+    /* MAIN COLOR: #087F5B
+    GRAY COLOR: #343a40 */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'inter', sans-serif;
+      color: #343a40;
+      line-height: 1;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    table {
+      width: 800px;
+      font-size: 18px;
+      /* background-color: red; */
+      margin-top: 100px;
+      /* border: 1px solid #343a40; */
+      border-collapse: collapse;
+    }
+
+    /* in order to give the cells the same border as the outline border, we use the th and td elements as the selectors */
+    th,
+    td {
+      /* border: 1px solid #000000; */
+      /* the property "border" (above) will set a border for each cell so it might look doubled. if we want to have only one line between the cells, we need to add the property "border-collapse" on the table element. */
+      padding: 16px 24px;
+      text-align: left;
+    }
+
+    thead th {
+      background-color: #087F5B;
+      color: #fff;
+      width: 25%;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: rgb(255, 255, 255);
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: rgb(235, 235, 235);
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- inside the table element we'll have <tr>(=table row) and <td>(=table data) -->
+  <!-- thead=table head. this way we can set the first line as the heading of the table. same for <tbody>. it has a semantic meaning in html5 so sometimes we might prefer to use the table element instead css grid, even though the cssgrid may be more easy -->
+  <!-- <th> (=table head cell. the <tr> elements will automatically be bold) -->
+  <table>
+    <thead>
+      <tr>
+        <th>chair</th>
+        <th>the laid back</th>
+        <th>the worker bee</th>
+        <th>the chair 4/2</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th>width</th>
+        <td>80 cm</td>
+        <td>60 cm</td>
+        <td>220 cm</td>
+      </tr>
+      <tr>
+        <th>height</th>
+        <td>100 cm</td>
+        <td>110 cm</td>
+        <td>90 cm</td>
+      </tr>
+      <tr>
+        <th>Depth</th>
+        <td>70 cm</td>
+        <td>65 cm</td>
+        <td>80 cm</td>
+      </tr>
+      <tr>
+        <th>weight</th>
+        <td>16 kg</td>
+        <td>22 kg</td>
+        <td>80 kg</td>
+      </tr>
+    </tbody>
+  </table>
+    </body>
+    </html>

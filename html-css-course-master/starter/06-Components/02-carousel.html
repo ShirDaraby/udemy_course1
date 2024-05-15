@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <title>Carousel Component</title>
+
+  <style>
+    /*
+    SPACING SYSTEM (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+    FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+    */
+
+    /* MAIN COLOR: #087F5B
+    GRAY COLOR: #343a40 */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'inter', sans-serif;
+      color: #343a40;
+      line-height: 1;
+    }
+
+    img {
+      height: 200px;
+      border-radius: 8px;
+      transform: scale(1.5);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .carousel {
+      background-color: #087F5B;
+      width: 800px;
+      margin: 100px auto;
+      /* for margin we set value (for ex' 100px) + auto/left/right to tell where the margin will be applied. auto= 100px on each side */
+      border-radius: 8px;
+      padding: 32px;
+      padding-left: 86px;
+      padding-right: 64px;
+
+      display: flex;
+      align-items: center;
+      gap: 86px;
+      position: relative;
+    }
+
+    /* .testimonial {
+      display: flex;
+      gap: 50px;
+    } */
+
+    .tesimonial-text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #f0fffb;
+      margin-bottom: 24px;
+    }
+    
+    .testimonial-author {
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: #c9ffef;
+    }
+    
+    .testimonial-job {
+      font-size: 12px;
+      color: #c9ffef;
+    }
+
+    /* CONTROLS */
+    .btn {
+      background-color: #fff;
+      border: none;
+      height: 48px;
+      width: 48px;
+      /* border-radious set to 50% will make the element an exact circle (if it was a square before, means same width and height) */
+      border-radius: 50%;
+      box-shadow: 0 12px 24px rgb(0, 0, 0, 0.2);
+      cursor: pointer;
+
+      /* the width for the btns isnt apply because they are part of a flex container...
+      so we need to give them an absolute position. */
+      position: absolute;
+      /* then we need to specify in which excact container those elements will appear. in relation to which parent they will be absolutly positioning. in this case we will set the carousel to position:relative. */
+      top: 50%;
+      /* the top property will locate the element in center of the relate container (=in the center of the carousel block) but thn it will seem like its not centered, because it reffers to the top pixel of the element.
+      so in order so align in from the center of the element, we'll use another property- transform. */
+      transform: translate(0, -50%);
+      /* we use -50% on the Y axis to move it up 50% from the last location that we got by using the "top" property...
+      X axis value is set to 0 because class .btn will affect both of the arrows, which needs different X values (left -50, right 50). those different values will be applied on the relevant classes below */
+
+      /* here we use flexbox just to center the arrow inside its circle. its an easy way to center the item even if its the only item in that container. */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn--left {
+      left: 0;
+      transform: translate(-50%, -50%);
+      /* here we need to set -50% for X axis to make it half outside the block */
+    }
+
+    .btn--right {
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+
+    .btn-icon {
+      height: 24px;
+      width: 24px;
+      stroke: #087F5B;
+      stroke-width: 2px;
+    }
+
+    .dots {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 32px);
+      /* we use transform:translate (horizontal, vertical) in order to se the position of the item to absolute, in relation to itself and not to other element. */
+
+      /* now we can define the dots div as a flex container and set the gap and aligning for it */
+      display: flex;
+      gap: 12px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      background-color: #fff;
+      border: #087F5B 2px solid;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    .dot--fill {
+      background-color: #087F5B;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="carousel">
+    <img src="maria.jpg" alt="maria de Almeida"/>
+    <blockquote class="tesimonial">
+      <p class="tesimonial-text">
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quasi atque explicabo possimus eum sint amet, dolorum perferendis quo asperiores quia quae, enim ea illo consequuntur rerum. Aperiam, nesciunt at?"
+      </p>
+      <p class="testimonial-author">Maria de Almeida</p>
+      <p class="testimonial-job">Senior Product manager at EDP commercial</p>
+    </blockquote>
+    
+    <button class="btn btn--left">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>      
+    </button>
+    <button class="btn btn--right">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>      
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>      
+    </button>
+
+    <div class="dots">
+      <button class="dot">&nbsp;</button>
+      <!-- &nbsp is a filler, just so the button element will contain text instead of being empty (ensp=NoBreakingSPace) -->
+      <button class="dot dot--fill">&nbsp;</button>
+      <button class="dot">&nbsp;</button>
+      <button class="dot">&nbsp;</button>
+    </div>
+  </div>
+</body>
+</html>
