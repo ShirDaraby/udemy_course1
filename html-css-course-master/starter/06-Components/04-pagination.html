@@ -70,24 +70,37 @@
       height: 20px;
     } */
 
-    .number {
+    .number:link,
+    .number:visited {
+      /* background-color: #ffffff; */
+      color: #000000;
+      font-weight: 500;
       width: 32px;
       height: 32px;
-      border-radius: 50%;
       text-decoration: none;
       line-height: 0;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    a:link {
+    /* a:link {
       background-color: #ffffff;
       color: #000000;
       font-weight: 500;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    } */
 
-    a:hover {
+    /* ".number.number--current" the ".number--current" selector wasnt enough in order to have high priority over the "number:link" selector because of its specifity (0,2,0).
+    the result was that the bg was missing. so adding one more selector will give it the same specifity. test by remuving the .number class that is connected to ".number.number--current"- w/o space its called "end selector".
+    the main goal was to create a state for clicked button */
+    .number:hover,
+    .number:active,
+    .number.number--current {
       background-color: #087f5b;
       color: #ffffff;
 
@@ -107,7 +120,7 @@
   
   <a href="#" class="number">1</a>
   <a href="#" class="number">2</a>
-  <a href="#" class="number">3</a>
+  <a href="#" class="number number--current">3</a>
   <a href="#" class="number">4</a>
   <a href="#" class="number">5</a>
   <a href="#" class="number">6</a>

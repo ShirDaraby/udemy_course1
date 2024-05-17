@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Omnifood hero sectiom</title>
+  
+  <style>
+
+    html {
+      font-family: 'Rubik', sans-serif;
+      color: #444;
+    }
+
+    /* by creating a class named container and giving it margin value, we assure that each div with this class will be same size, all over the website. the reason we dont apply the margin to the header and section themselves, is that we want the background imgs to be from side to side */
+    .container {
+      margin: 0 auto;
+      width: 1200px;
+    }
+
+    nav {
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      background-color: #f7f7f7;
+    }
+
+    h1 {
+      font-size: 52px;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 44px;
+      margin-bottom: 48px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    .btn:link,
+    .brn:visited {
+      background-color: #ff7a0c;
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 15px;
+      border-radius: 5px;
+      /* why need to use inline-block for padding */
+    }
+
+  </style>
+
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div>LOGO</div>
+      <div>NAVIGATION</div>
+    </nav>
+
+    <div>
+      <h1>A healthy meal delivered to your door, every single day</h1>
+      <p>The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your personal taste and nutritional needs</p>
+      <a href="#" class="btn">Start eating well</a>
+    </div>
+  </header>
+
+  <section class="container">
+    <div>
+      <h2>some random heading</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ad nobis a similique, quas consequatur obcaecati cupiditate. Blanditiis tempore unde quis vel error, rem quae itaque reprehenderit? Aut, accusantium rerum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugiat error exercitationem, porro, corporis libero suscipit, magnam quibusdam doloribus qui minima. Dicta cum quibusdam itaque voluptate impedit earum quod est.</p>
+    </div>
+  </section>
+</body>
+</html>
